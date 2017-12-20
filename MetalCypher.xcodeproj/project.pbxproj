@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22028B9E1FA961F500011876 /* MetalCypher.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22028B9D1FA961F500011876 /* MetalCypher.metal */; };
+		22028BA51FA9D67E00011876 /* SharedMD5.c in Sources */ = {isa = PBXBuildFile; fileRef = 22028BA41FA9D67E00011876 /* SharedMD5.c */; };
+		220E15ED1FB3A90C007B7B29 /* SharedMD5.metal in Sources */ = {isa = PBXBuildFile; fileRef = 220E15EC1FB3A90C007B7B29 /* SharedMD5.metal */; };
+		22A4ED951F8F06430075BB2B /* Async.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED931F8F06430075BB2B /* Async.m */; };
+		22A4ED991F8F93520075BB2B /* MetalCypher.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED971F8F93520075BB2B /* MetalCypher.m */; };
+		22C023AB1F910A8C002DDAC7 /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023A81F910A8C002DDAC7 /* MD5.h */; };
+		22C023AD1F910A8C002DDAC7 /* MD5.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22C023AA1F910A8C002DDAC7 /* MD5.metal */; };
+		22C023AF1F911807002DDAC7 /* Async_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023AE1F91174C002DDAC7 /* Async_Internal.h */; };
+		22C023B11F911A26002DDAC7 /* Async_Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C023B01F911A26002DDAC7 /* Async_Internal.m */; };
+		22C023B21F911A9C002DDAC7 /* SharedMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023A71F910A55002DDAC7 /* SharedMD5.h */; };
+		22C023D91F9155D7002DDAC7 /* MetalCypher.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023D71F9155D7002DDAC7 /* MetalCypher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C023DA1F9155D7002DDAC7 /* Async.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023D81F9155D7002DDAC7 /* Async.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22F583A71F8FD2C300207597 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A51F8FD2C300207597 /* MetalKit.framework */; };
+		22F583A81F8FD2C300207597 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A61F8FD2C300207597 /* Metal.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22028B9D1FA961F500011876 /* MetalCypher.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalCypher.metal; sourceTree = "<group>"; };
+		22028BA41FA9D67E00011876 /* SharedMD5.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SharedMD5.c; sourceTree = "<group>"; };
+		22067A951FB8622D00DC7DDD /* SharedMD5.shared */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SharedMD5.shared; sourceTree = "<group>"; };
+		220E15EC1FB3A90C007B7B29 /* SharedMD5.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMD5.metal; sourceTree = "<group>"; };
+		221888761F8ECE8A000731EA /* libMetalCypher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMetalCypher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A4ED931F8F06430075BB2B /* Async.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Async.m; sourceTree = "<group>"; };
+		22A4ED971F8F93520075BB2B /* MetalCypher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MetalCypher.m; path = MetalCypher/MetalCypher.m; sourceTree = SOURCE_ROOT; };
+		22C023A71F910A55002DDAC7 /* SharedMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedMD5.h; sourceTree = "<group>"; };
+		22C023A81F910A8C002DDAC7 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
+		22C023AA1F910A8C002DDAC7 /* MD5.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MD5.metal; sourceTree = "<group>"; };
+		22C023AE1F91174C002DDAC7 /* Async_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Async_Internal.h; sourceTree = "<group>"; };
+		22C023B01F911A26002DDAC7 /* Async_Internal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Async_Internal.m; sourceTree = "<group>"; };
+		22C023D71F9155D7002DDAC7 /* MetalCypher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalCypher.h; sourceTree = "<group>"; };
+		22C023D81F9155D7002DDAC7 /* Async.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Async.h; sourceTree = "<group>"; };
+		22F583A51F8FD2C300207597 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		22F583A61F8FD2C300207597 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		221888731F8ECE8A000731EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22F583A71F8FD2C300207597 /* MetalKit.framework in Frameworks */,
+				22F583A81F8FD2C300207597 /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22028B9F1FA9D2E700011876 /* SharedMD5 */ = {
+			isa = PBXGroup;
+			children = (
+				22C023A71F910A55002DDAC7 /* SharedMD5.h */,
+				22067A951FB8622D00DC7DDD /* SharedMD5.shared */,
+				22028BA41FA9D67E00011876 /* SharedMD5.c */,
+				220E15EC1FB3A90C007B7B29 /* SharedMD5.metal */,
+			);
+			name = SharedMD5;
+			sourceTree = "<group>";
+		};
+		2218886D1F8ECE8A000731EA = {
+			isa = PBXGroup;
+			children = (
+				221888781F8ECE8A000731EA /* MetalCypher */,
+				221888771F8ECE8A000731EA /* Products */,
+				22F583A41F8FD2C200207597 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		221888771F8ECE8A000731EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				221888761F8ECE8A000731EA /* libMetalCypher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221888781F8ECE8A000731EA /* MetalCypher */ = {
+			isa = PBXGroup;
+			children = (
+				22028B9F1FA9D2E700011876 /* SharedMD5 */,
+				22C023A41F9106CE002DDAC7 /* Async */,
+				22C023A61F91096F002DDAC7 /* MD5 */,
+				22C023A31F9106C2002DDAC7 /* MetalCypher */,
+			);
+			path = MetalCypher;
+			sourceTree = "<group>";
+		};
+		22C023A31F9106C2002DDAC7 /* MetalCypher */ = {
+			isa = PBXGroup;
+			children = (
+				22C023D71F9155D7002DDAC7 /* MetalCypher.h */,
+				22A4ED971F8F93520075BB2B /* MetalCypher.m */,
+				22028B9D1FA961F500011876 /* MetalCypher.metal */,
+			);
+			name = MetalCypher;
+			sourceTree = "<group>";
+		};
+		22C023A41F9106CE002DDAC7 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				22C023AE1F91174C002DDAC7 /* Async_Internal.h */,
+				22C023B01F911A26002DDAC7 /* Async_Internal.m */,
+				22C023D81F9155D7002DDAC7 /* Async.h */,
+				22A4ED931F8F06430075BB2B /* Async.m */,
+			);
+			name = Async;
+			sourceTree = "<group>";
+		};
+		22C023A61F91096F002DDAC7 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				22C023A81F910A8C002DDAC7 /* MD5.h */,
+				22C023AA1F910A8C002DDAC7 /* MD5.metal */,
+			);
+			name = MD5;
+			sourceTree = "<group>";
+		};
+		22F583A41F8FD2C200207597 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F583A61F8FD2C300207597 /* Metal.framework */,
+				22F583A51F8FD2C300207597 /* MetalKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		221888741F8ECE8A000731EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C023DA1F9155D7002DDAC7 /* Async.h in Headers */,
+				22C023D91F9155D7002DDAC7 /* MetalCypher.h in Headers */,
+				22C023B21F911A9C002DDAC7 /* SharedMD5.h in Headers */,
+				22C023AF1F911807002DDAC7 /* Async_Internal.h in Headers */,
+				22C023AB1F910A8C002DDAC7 /* MD5.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		221888751F8ECE8A000731EA /* MetalCypher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2218887F1F8ECE8A000731EA /* Build configuration list for PBXNativeTarget "MetalCypher" */;
+			buildPhases = (
+				221888721F8ECE8A000731EA /* Sources */,
+				221888731F8ECE8A000731EA /* Frameworks */,
+				221888741F8ECE8A000731EA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalCypher;
+			productName = MetalCypher;
+			productReference = 221888761F8ECE8A000731EA /* libMetalCypher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2218886E1F8ECE8A000731EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "ArcTouch, Inc.";
+				TargetAttributes = {
+					221888751F8ECE8A000731EA = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 221888711F8ECE8A000731EA /* Build configuration list for PBXProject "MetalCypher" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2218886D1F8ECE8A000731EA;
+			productRefGroup = 221888771F8ECE8A000731EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				221888751F8ECE8A000731EA /* MetalCypher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		221888721F8ECE8A000731EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C023AD1F910A8C002DDAC7 /* MD5.metal in Sources */,
+				220E15ED1FB3A90C007B7B29 /* SharedMD5.metal in Sources */,
+				22028BA51FA9D67E00011876 /* SharedMD5.c in Sources */,
+				22A4ED991F8F93520075BB2B /* MetalCypher.m in Sources */,
+				22C023B11F911A26002DDAC7 /* Async_Internal.m in Sources */,
+				22028B9E1FA961F500011876 /* MetalCypher.metal in Sources */,
+				22A4ED951F8F06430075BB2B /* Async.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2218887D1F8ECE8A000731EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2218887E1F8ECE8A000731EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		221888801F8ECE8A000731EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_PREPROCESSOR_DEFINITIONS = METAL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		221888811F8ECE8A000731EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_PREPROCESSOR_DEFINITIONS = METAL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		221888711F8ECE8A000731EA /* Build configuration list for PBXProject "MetalCypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2218887D1F8ECE8A000731EA /* Debug */,
+				2218887E1F8ECE8A000731EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2218887F1F8ECE8A000731EA /* Build configuration list for PBXNativeTarget "MetalCypher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221888801F8ECE8A000731EA /* Debug */,
+				221888811F8ECE8A000731EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2218886E1F8ECE8A000731EA /* Project object */;
+}

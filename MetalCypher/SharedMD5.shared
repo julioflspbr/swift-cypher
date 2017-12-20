@@ -1,0 +1,50 @@
+//
+//  SharedMD5.shared
+//  MetalCypher
+//
+//  Created by Julio Flores on 01/11/17.
+//
+
+#ifdef METAL
+#define ulong size_t
+#else
+#define ulong unsigned long
+#endif
+
+#undef min
+#undef max
+
+#define min(lhs, rhs) (lhs < rhs) ? lhs : rhs
+#define max(lhs, rhs) (lhs > rhs) ? lhs : rhs
+
+void passwordFrom(uint index, thread byte * output, thread uint * outputSize) {
+  // avoiding a crash when index = 0 (which may lead to null pointer access) 
+  if (!index) {
+    *output = 0;
+    *outputSize = 1;
+    return;
+  }
+  
+  uint operationSize = sizeof(word);
+  encode(&index, output, 1);
+  
+  for (uint i = operationSize - 1; output[i] == 0; i--) {
+    operationSize--;
+  }
+  
+  *outputSize = operationSize;
+}
+
+void encode(thread word const * const input, thread byte * output, uint inputSize) {
+  for (uint i = 0; i < inputSize; i++) {
+    for (uint j = 0; j < sizeof(word); j++) {
+      output[i * sizeof(word) + j] = input[i] >> (BYTE_SIZE_IN_BITS * j);
+    }
+  }
+}
+
+void decode(thread byte const * const input, thread word * output, uint inputSize) {
+  for (uint i = 0, j = 0, s = 0; i < inputSize; j = ++i / sizeof(word), s = i % sizeof(word)) {
+    output[j] |= input[i] << (BYTE_SIZE_IN_BITS * s);
+  }
+}
