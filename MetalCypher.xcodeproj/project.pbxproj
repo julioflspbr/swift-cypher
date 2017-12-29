@@ -10,6 +10,8 @@
 		22028B9E1FA961F500011876 /* MetalCypher.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22028B9D1FA961F500011876 /* MetalCypher.metal */; };
 		22028BA51FA9D67E00011876 /* SharedMD5.c in Sources */ = {isa = PBXBuildFile; fileRef = 22028BA41FA9D67E00011876 /* SharedMD5.c */; };
 		220E15ED1FB3A90C007B7B29 /* SharedMD5.metal in Sources */ = {isa = PBXBuildFile; fileRef = 220E15EC1FB3A90C007B7B29 /* SharedMD5.metal */; };
+		2265FADE1FF15C4800D5D9F4 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A51F8FD2C300207597 /* MetalKit.framework */; };
+		2265FADF1FF15C5000D5D9F4 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A61F8FD2C300207597 /* Metal.framework */; };
 		22A4ED951F8F06430075BB2B /* Async.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED931F8F06430075BB2B /* Async.m */; };
 		22A4ED991F8F93520075BB2B /* MetalCypher.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED971F8F93520075BB2B /* MetalCypher.m */; };
 		22C023AB1F910A8C002DDAC7 /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023A81F910A8C002DDAC7 /* MD5.h */; };
@@ -49,6 +51,16 @@
 			files = (
 				22F583A71F8FD2C300207597 /* MetalKit.framework in Frameworks */,
 				22F583A81F8FD2C300207597 /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22AEBE6D1FEB02C600F6E172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2265FADE1FF15C4800D5D9F4 /* MetalKit.framework in Frameworks */,
+				2265FADF1FF15C5000D5D9F4 /* Metal.framework in Frameworks */,
+				22AEBE751FEB02C700F6E172 /* libMetalCypher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +186,8 @@
 		2218886E1F8ECE8A000731EA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "ArcTouch, Inc.";
 				TargetAttributes = {
 					221888751F8ECE8A000731EA = {
@@ -319,6 +332,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -348,6 +362,41 @@
 				MTL_PREPROCESSOR_DEFINITIONS = METAL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		22AEBE781FEB02C700F6E172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				INFOPLIST_FILE = MetalCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.MetalCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/MetalCypherTests/MetalCypherTests-BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		22AEBE791FEB02C700F6E172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				INFOPLIST_FILE = MetalCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.MetalCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/MetalCypherTests/MetalCypherTests-BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
