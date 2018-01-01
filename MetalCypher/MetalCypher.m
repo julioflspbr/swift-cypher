@@ -51,19 +51,15 @@
     return nil;
   }
   
+  NSBundle * libraryBundle = [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibrary];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:libraryBundle error:nil];
   commandQueue    = [device newCommandQueue];
   hashBuffer      = [device newBufferWithLength:HASH_SIZE     options:MTLResourceOptionCPUCacheModeWriteCombined];
   inputBuffer     = [device newBufferWithLength:sizeof(uint)  options:MTLResourceOptionCPUCacheModeWriteCombined];
   matchBuffer     = [device newBufferWithLength:sizeof(uint)  options:MTLResourceStorageModeShared];
   
-  MTLComputePipelineDescriptor * pipelineDescriptor = [MTLComputePipelineDescriptor new];
-  [pipelineDescriptor setComputeFunction:[defaultLibrary newFunctionWithName:kernelBruteForce]];
-  [pipelineDescriptor setLabel:@"Brute Force Pipeline"];
-  [pipelineDescriptor setThreadGroupSizeIsMultipleOfThreadExecutionWidth:YES];
-  
-  pipeline = [device newComputePipelineStateWithDescriptor:pipelineDescriptor options:MTLPipelineOptionBufferTypeInfo reflection:nil error:nil];
+  pipeline = [device newComputePipelineStateWithFunction:[defaultLibrary newFunctionWithName:kernelBruteForce] error:nil];
   
   trials = 0;
   password = [MD5Result new];
@@ -87,19 +83,16 @@
     return nil;
   }
   
+  NSBundle * libraryBundle = [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
+  
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibrary];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:libraryBundle error:nil];
   commandQueue    = [device newCommandQueue];
   inputBuffer     = [device newBufferWithLength:[thePassword length]  options:MTLResourceOptionCPUCacheModeWriteCombined];
   inputSizeBuffer = [device newBufferWithLength:sizeof(uint)          options:MTLResourceOptionCPUCacheModeWriteCombined];
   outputBuffer    = [device newBufferWithLength:sizeof(uint)          options:MTLResourceStorageModeShared];
   
-  MTLComputePipelineDescriptor * pipelineDescriptor = [MTLComputePipelineDescriptor new];
-  [pipelineDescriptor setComputeFunction:[defaultLibrary newFunctionWithName:kernelHashify]];
-  [pipelineDescriptor setLabel:@"Hashify Pipeline"];
-  [pipelineDescriptor setThreadGroupSizeIsMultipleOfThreadExecutionWidth:NO];
-  
-  pipeline = [device newComputePipelineStateWithDescriptor:pipelineDescriptor options:MTLPipelineOptionBufferTypeInfo reflection:nil error:nil];
+  pipeline = [device newComputePipelineStateWithFunction:[defaultLibrary newFunctionWithName:kernelHashify] error:nil];
   
   password = [MD5Result new];
   hash = [MD5Result new];

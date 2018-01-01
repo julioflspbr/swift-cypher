@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222490131FF16D2200AC1E3C /* HashifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222490121FF16D2200AC1E3C /* HashifierTests.swift */; };
+		222490141FF16D3300AC1E3C /* Hashifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F39FA51FD6C49F007CFF1F /* Hashifier.swift */; };
+		222490151FF16D3600AC1E3C /* Revealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F39FA31FD6BDFD007CFF1F /* Revealer.swift */; };
+		222490161FF16D8900AC1E3C /* libMetalCypher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CA1F914D6F002DDAC7 /* libMetalCypher.a */; };
+		222490171FF16D9000AC1E3C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CC1F914D78002DDAC7 /* Metal.framework */; };
+		222490181FF16D9000AC1E3C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CB1F914D78002DDAC7 /* MetalKit.framework */; };
+		2224901B1FF5ADA500AC1E3C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C023C11F914D45002DDAC7 /* main.swift */; };
+		2224901D1FF5AE4D00AC1E3C /* RevealerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224901C1FF5AE4D00AC1E3C /* RevealerTests.swift */; };
 		22C023C21F914D45002DDAC7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C023C11F914D45002DDAC7 /* main.swift */; };
 		22C023C91F914D6F002DDAC7 /* libMetalCypher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CA1F914D6F002DDAC7 /* libMetalCypher.a */; };
 		22C023CD1F914D78002DDAC7 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CB1F914D78002DDAC7 /* MetalKit.framework */; };
@@ -16,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2224900A1FF16CF600AC1E3C /* SwiftCypherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCypherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2224900E1FF16CF600AC1E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222490121FF16D2200AC1E3C /* HashifierTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashifierTests.swift; sourceTree = "<group>"; };
+		2224901C1FF5AE4D00AC1E3C /* RevealerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealerTests.swift; sourceTree = "<group>"; };
 		22C023BE1F914D45002DDAC7 /* SwiftCypher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftCypher; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C023C11F914D45002DDAC7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		22C023CA1F914D6F002DDAC7 /* libMetalCypher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMetalCypher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +39,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		222490071FF16CF600AC1E3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222490171FF16D9000AC1E3C /* Metal.framework in Frameworks */,
+				222490181FF16D9000AC1E3C /* MetalKit.framework in Frameworks */,
+				222490161FF16D8900AC1E3C /* libMetalCypher.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C023BB1F914D45002DDAC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +62,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2224900B1FF16CF600AC1E3C /* SwiftCypherTests */ = {
+			isa = PBXGroup;
+			children = (
+				2224900E1FF16CF600AC1E3C /* Info.plist */,
+				222490121FF16D2200AC1E3C /* HashifierTests.swift */,
+				2224901C1FF5AE4D00AC1E3C /* RevealerTests.swift */,
+			);
+			path = SwiftCypherTests;
+			sourceTree = "<group>";
+		};
 		22C023B51F914D45002DDAC7 = {
 			isa = PBXGroup;
 			children = (
 				22C023C01F914D45002DDAC7 /* SwiftCypher */,
+				2224900B1FF16CF600AC1E3C /* SwiftCypherTests */,
 				22C023BF1F914D45002DDAC7 /* Products */,
 				22C023C81F914D6F002DDAC7 /* Frameworks */,
 			);
@@ -53,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				22C023BE1F914D45002DDAC7 /* SwiftCypher */,
+				2224900A1FF16CF600AC1E3C /* SwiftCypherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +115,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		222490091FF16CF600AC1E3C /* SwiftCypherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2224900F1FF16CF600AC1E3C /* Build configuration list for PBXNativeTarget "SwiftCypherTests" */;
+			buildPhases = (
+				222490061FF16CF600AC1E3C /* Sources */,
+				222490071FF16CF600AC1E3C /* Frameworks */,
+				222490081FF16CF600AC1E3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCypherTests;
+			productName = SwiftCypherTests;
+			productReference = 2224900A1FF16CF600AC1E3C /* SwiftCypherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		22C023BD1F914D45002DDAC7 /* SwiftCypher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22C023C51F914D45002DDAC7 /* Build configuration list for PBXNativeTarget "SwiftCypher" */;
@@ -103,10 +154,15 @@
 		22C023B61F914D45002DDAC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = ArcTouch;
 				TargetAttributes = {
+					222490091FF16CF600AC1E3C = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
 					22C023BD1F914D45002DDAC7 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -126,11 +182,34 @@
 			projectRoot = "";
 			targets = (
 				22C023BD1F914D45002DDAC7 /* SwiftCypher */,
+				222490091FF16CF600AC1E3C /* SwiftCypherTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		222490081FF16CF600AC1E3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		222490061FF16CF600AC1E3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222490131FF16D2200AC1E3C /* HashifierTests.swift in Sources */,
+				222490141FF16D3300AC1E3C /* Hashifier.swift in Sources */,
+				2224901B1FF5ADA500AC1E3C /* main.swift in Sources */,
+				222490151FF16D3600AC1E3C /* Revealer.swift in Sources */,
+				2224901D1FF5AE4D00AC1E3C /* RevealerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22C023BA1F914D45002DDAC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +223,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		222490101FF16CF600AC1E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				INFOPLIST_FILE = SwiftCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftCypher/SwiftCypher-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		222490111FF16CF600AC1E3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				INFOPLIST_FILE = SwiftCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftCypher/SwiftCypher-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		22C023C31F914D45002DDAC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -174,9 +292,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -193,7 +309,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -230,7 +345,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -253,8 +367,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5HMJW6N276;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftCypher/SwiftCypher-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -266,8 +382,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5HMJW6N276;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftCypher/SwiftCypher-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -277,6 +395,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2224900F1FF16CF600AC1E3C /* Build configuration list for PBXNativeTarget "SwiftCypherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222490101FF16CF600AC1E3C /* Debug */,
+				222490111FF16CF600AC1E3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22C023B91F914D45002DDAC7 /* Build configuration list for PBXProject "SwiftCypher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

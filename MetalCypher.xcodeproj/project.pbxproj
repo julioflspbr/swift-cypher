@@ -10,8 +10,14 @@
 		22028B9E1FA961F500011876 /* MetalCypher.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22028B9D1FA961F500011876 /* MetalCypher.metal */; };
 		22028BA51FA9D67E00011876 /* SharedMD5.c in Sources */ = {isa = PBXBuildFile; fileRef = 22028BA41FA9D67E00011876 /* SharedMD5.c */; };
 		220E15ED1FB3A90C007B7B29 /* SharedMD5.metal in Sources */ = {isa = PBXBuildFile; fileRef = 220E15EC1FB3A90C007B7B29 /* SharedMD5.metal */; };
+		2265FADE1FF15C4800D5D9F4 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A51F8FD2C300207597 /* MetalKit.framework */; };
+		2265FADF1FF15C5000D5D9F4 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A61F8FD2C300207597 /* Metal.framework */; };
 		22A4ED951F8F06430075BB2B /* Async.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED931F8F06430075BB2B /* Async.m */; };
 		22A4ED991F8F93520075BB2B /* MetalCypher.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A4ED971F8F93520075BB2B /* MetalCypher.m */; };
+		22AEBE731FEB02C700F6E172 /* SharedMD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEBE721FEB02C700F6E172 /* SharedMD5Tests.swift */; };
+		22AEBE751FEB02C700F6E172 /* libMetalCypher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 221888761F8ECE8A000731EA /* libMetalCypher.a */; };
+		22AEBE7D1FEB19D200F6E172 /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEBE7C1FEB19D200F6E172 /* AsyncTests.swift */; };
+		22AEBE821FEBB13E00F6E172 /* MetalCypherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AEBE811FEBB13E00F6E172 /* MetalCypherTests.swift */; };
 		22C023AB1F910A8C002DDAC7 /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023A81F910A8C002DDAC7 /* MD5.h */; };
 		22C023AD1F910A8C002DDAC7 /* MD5.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22C023AA1F910A8C002DDAC7 /* MD5.metal */; };
 		22C023AF1F911807002DDAC7 /* Async_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C023AE1F91174C002DDAC7 /* Async_Internal.h */; };
@@ -23,6 +29,16 @@
 		22F583A81F8FD2C300207597 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F583A61F8FD2C300207597 /* Metal.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		22AEBE761FEB02C700F6E172 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2218886E1F8ECE8A000731EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 221888751F8ECE8A000731EA;
+			remoteInfo = MetalCypher;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		22028B9D1FA961F500011876 /* MetalCypher.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalCypher.metal; sourceTree = "<group>"; };
 		22028BA41FA9D67E00011876 /* SharedMD5.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SharedMD5.c; sourceTree = "<group>"; };
@@ -31,6 +47,12 @@
 		221888761F8ECE8A000731EA /* libMetalCypher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMetalCypher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A4ED931F8F06430075BB2B /* Async.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Async.m; sourceTree = "<group>"; };
 		22A4ED971F8F93520075BB2B /* MetalCypher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MetalCypher.m; path = MetalCypher/MetalCypher.m; sourceTree = SOURCE_ROOT; };
+		22AEBE701FEB02C600F6E172 /* MetalCypherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalCypherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AEBE721FEB02C700F6E172 /* SharedMD5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMD5Tests.swift; sourceTree = "<group>"; };
+		22AEBE741FEB02C700F6E172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22AEBE7B1FEB048400F6E172 /* MetalCypherTests-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalCypherTests-BridgingHeader.h"; sourceTree = "<group>"; };
+		22AEBE7C1FEB19D200F6E172 /* AsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
+		22AEBE811FEBB13E00F6E172 /* MetalCypherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalCypherTests.swift; sourceTree = "<group>"; };
 		22C023A71F910A55002DDAC7 /* SharedMD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedMD5.h; sourceTree = "<group>"; };
 		22C023A81F910A8C002DDAC7 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
 		22C023AA1F910A8C002DDAC7 /* MD5.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MD5.metal; sourceTree = "<group>"; };
@@ -52,6 +74,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22AEBE6D1FEB02C600F6E172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2265FADE1FF15C4800D5D9F4 /* MetalKit.framework in Frameworks */,
+				2265FADF1FF15C5000D5D9F4 /* Metal.framework in Frameworks */,
+				22AEBE751FEB02C700F6E172 /* libMetalCypher.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				221888781F8ECE8A000731EA /* MetalCypher */,
+				22AEBE711FEB02C700F6E172 /* MetalCypherTests */,
 				221888771F8ECE8A000731EA /* Products */,
 				22F583A41F8FD2C200207597 /* Frameworks */,
 			);
@@ -79,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				221888761F8ECE8A000731EA /* libMetalCypher.a */,
+				22AEBE701FEB02C600F6E172 /* MetalCypherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +126,18 @@
 				22C023A31F9106C2002DDAC7 /* MetalCypher */,
 			);
 			path = MetalCypher;
+			sourceTree = "<group>";
+		};
+		22AEBE711FEB02C700F6E172 /* MetalCypherTests */ = {
+			isa = PBXGroup;
+			children = (
+				22AEBE7B1FEB048400F6E172 /* MetalCypherTests-BridgingHeader.h */,
+				22AEBE741FEB02C700F6E172 /* Info.plist */,
+				22AEBE7C1FEB19D200F6E172 /* AsyncTests.swift */,
+				22AEBE721FEB02C700F6E172 /* SharedMD5Tests.swift */,
+				22AEBE811FEBB13E00F6E172 /* MetalCypherTests.swift */,
+			);
+			path = MetalCypherTests;
 			sourceTree = "<group>";
 		};
 		22C023A31F9106C2002DDAC7 /* MetalCypher */ = {
@@ -168,18 +214,41 @@
 			productReference = 221888761F8ECE8A000731EA /* libMetalCypher.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		22AEBE6F1FEB02C600F6E172 /* MetalCypherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22AEBE7A1FEB02C700F6E172 /* Build configuration list for PBXNativeTarget "MetalCypherTests" */;
+			buildPhases = (
+				22AEBE6C1FEB02C600F6E172 /* Sources */,
+				22AEBE6D1FEB02C600F6E172 /* Frameworks */,
+				22AEBE6E1FEB02C600F6E172 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22AEBE771FEB02C700F6E172 /* PBXTargetDependency */,
+			);
+			name = MetalCypherTests;
+			productName = MetalCypherTests;
+			productReference = 22AEBE701FEB02C600F6E172 /* MetalCypherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2218886E1F8ECE8A000731EA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "ArcTouch, Inc.";
 				TargetAttributes = {
 					221888751F8ECE8A000731EA = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					22AEBE6F1FEB02C600F6E172 = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -197,9 +266,20 @@
 			projectRoot = "";
 			targets = (
 				221888751F8ECE8A000731EA /* MetalCypher */,
+				22AEBE6F1FEB02C600F6E172 /* MetalCypherTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22AEBE6E1FEB02C600F6E172 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		221888721F8ECE8A000731EA /* Sources */ = {
@@ -216,7 +296,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22AEBE6C1FEB02C600F6E172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AEBE7D1FEB19D200F6E172 /* AsyncTests.swift in Sources */,
+				22AEBE731FEB02C700F6E172 /* SharedMD5Tests.swift in Sources */,
+				22AEBE821FEBB13E00F6E172 /* MetalCypherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22AEBE771FEB02C700F6E172 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 221888751F8ECE8A000731EA /* MetalCypher */;
+			targetProxy = 22AEBE761FEB02C700F6E172 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2218887D1F8ECE8A000731EA /* Debug */ = {
@@ -319,6 +417,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -351,6 +450,41 @@
 			};
 			name = Release;
 		};
+		22AEBE781FEB02C700F6E172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				INFOPLIST_FILE = MetalCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.MetalCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/MetalCypherTests/MetalCypherTests-BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		22AEBE791FEB02C700F6E172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5HMJW6N276;
+				INFOPLIST_FILE = MetalCypherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.MetalCypherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/MetalCypherTests/MetalCypherTests-BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +502,15 @@
 			buildConfigurations = (
 				221888801F8ECE8A000731EA /* Debug */,
 				221888811F8ECE8A000731EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22AEBE7A1FEB02C700F6E172 /* Build configuration list for PBXNativeTarget "MetalCypherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22AEBE781FEB02C700F6E172 /* Debug */,
+				22AEBE791FEB02C700F6E172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
