@@ -83,7 +83,7 @@ class MD5 {
   
 public:
   MD5(thread byte const * const input, size_t const inputSize);
-  byte output[HASH_SIZE];
+  thread uint4 output;
 };
 
 #endif /* MD5_h */

@@ -5,18 +5,6 @@
 //  Created by Julio Flores on 01/11/17.
 //
 
-#ifdef METAL
-#define ulong size_t
-#else
-#define ulong unsigned long
-#endif
-
-#undef min
-#undef max
-
-#define min(lhs, rhs) (lhs < rhs) ? lhs : rhs
-#define max(lhs, rhs) (lhs > rhs) ? lhs : rhs
-
 void passwordFrom(uint index, thread byte * output, thread uint * outputSize) {
   // avoiding a crash when index = 0 (which may lead to null pointer access) 
   if (!index) {

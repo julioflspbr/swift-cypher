@@ -16,9 +16,14 @@
 #define MAX_TRIALS  (256 << (8 * (MAX_PASSWORD_LENGTH - 1)))
 #define BATCH_SIZE  (1 << 20) /* one mega trials */
 
+#define kernelBruteForce  @"bruteForce"
+#define kernelHashify     @"hashify"
+
 /// Private MetalCypher declaration
-#pragma mark Private MetalCypher declaration
+#pragma mark - Private MetalCypher declaration -
 @interface MetalCypher (Private)
+
+@property (readonly) NSBundle * _Nonnull defaultBundle;
 
 -(void)bruteForce;
 -(void)hashify;
@@ -26,7 +31,7 @@
 @end
 
 /// MetalCypher Implementation
-#pragma mark MetalCypher Implementation
+#pragma mark - MetalCypher Implementation -
 @implementation MetalCypher {
   id<MTLDevice> device;
   id<MTLLibrary> defaultLibrary;
@@ -40,24 +45,24 @@
   uint trials;
 }
 
-#define kernelBruteForce  @"bruteForce"
-#define kernelHashify     @"hashify"
-
 @synthesize password;
 @synthesize hash;
+
+- (NSBundle *)defaultBundle {
+  return [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
+}
 
 - (instancetype)initWithHash:(NSData *)theHash {
   if (!self) {
     return nil;
   }
   
-  NSBundle * libraryBundle = [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibraryWithBundle:libraryBundle error:nil];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:[self defaultBundle] error:nil];
   commandQueue    = [device newCommandQueue];
-  hashBuffer      = [device newBufferWithLength:HASH_SIZE     options:MTLResourceOptionCPUCacheModeWriteCombined];
-  inputBuffer     = [device newBufferWithLength:sizeof(uint)  options:MTLResourceOptionCPUCacheModeWriteCombined];
-  matchBuffer     = [device newBufferWithLength:sizeof(uint)  options:MTLResourceStorageModeShared];
+  hashBuffer      = [device newBufferWithLength:sizeof(simd_uint4)  options:MTLResourceOptionCPUCacheModeWriteCombined];
+  inputBuffer     = [device newBufferWithLength:sizeof(uint)        options:MTLResourceOptionCPUCacheModeWriteCombined];
+  matchBuffer     = [device newBufferWithLength:sizeof(uint)        options:MTLResourceStorageModeShared];
   
   pipeline = [device newComputePipelineStateWithFunction:[defaultLibrary newFunctionWithName:kernelBruteForce] error:nil];
   
@@ -67,12 +72,15 @@
   
   [hash setValue:theHash];
   
-  byte * hashBufferContents = [hashBuffer contents];
+  simd_uint4 * hashBufferContents = [hashBuffer contents];
   byte * hashBytes = (byte *)[theHash bytes];
-  for (uint i = 0; i < [theHash length]; i++) {
-    hashBufferContents[i] = hashBytes[i];
+  uint hashBuffer[sizeof(word)];
+  
+  decode(hashBytes, hashBuffer, HASH_SIZE);
+  for (uint i = 0; i < sizeof(word); i++) {
+    (*hashBufferContents)[i] = hashBuffer[i];
   }
-  trials = 22381;
+  
   [self bruteForce];
   
   return self;
@@ -83,10 +91,8 @@
     return nil;
   }
   
-  NSBundle * libraryBundle = [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
-  
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibraryWithBundle:libraryBundle error:nil];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:[self defaultBundle] error:nil];
   commandQueue    = [device newCommandQueue];
   inputBuffer     = [device newBufferWithLength:[thePassword length]  options:MTLResourceOptionCPUCacheModeWriteCombined];
   inputSizeBuffer = [device newBufferWithLength:sizeof(uint)          options:MTLResourceOptionCPUCacheModeWriteCombined];
@@ -101,9 +107,9 @@
   
   byte * input = [inputBuffer contents];
   uint * inputSize = [inputSizeBuffer contents];
-  byte * pwd = (byte *)[thePassword bytes];
+  byte * password = (byte *)[thePassword bytes];
   for (uint i = 0; i < [thePassword length]; i++) {
-    input[i] = pwd[i];
+    input[i] = password[i];
   }
   *inputSize = (uint)[thePassword length];
   
@@ -156,6 +162,7 @@
     trials += currentTrials;
     [_self bruteForce];
   }];
+  
   [commandBuffer commit];
 }
 
