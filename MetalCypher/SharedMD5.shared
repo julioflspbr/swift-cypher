@@ -33,6 +33,7 @@ void encode(thread word const * const input, thread byte * output, uint inputSiz
 
 void decode(thread byte const * const input, thread word * output, uint inputSize) {
   for (uint i = 0, j = 0, s = 0; i < inputSize; j = ++i / sizeof(word), s = i % sizeof(word)) {
+    if (s == 0) output[j] = 0;
     output[j] |= input[i] << (BYTE_SIZE_IN_BITS * s);
   }
 }
