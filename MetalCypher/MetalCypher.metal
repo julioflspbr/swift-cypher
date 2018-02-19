@@ -11,33 +11,47 @@
 
 using namespace metal;
 
-kernel void bruteForce(constant byte const  * hash      [[buffer(BruteForceParameterHash)]],
-                       constant uint const  * input     [[buffer(BruteForceParameterInput)]],
-                       device   uint        * match     [[buffer(BruteForceParameterMatch)]],
+kernel void bruteForce(constant uint4 const * hash      [[buffer(BruteForceParameterHash)]],
+                       constant uint  const * input     [[buffer(BruteForceParameterInput)]],
+                       device   atomic_uint * match     [[buffer(BruteForceParameterMatch)]],
                        thread   uint          threadID  [[thread_position_in_grid]]) {
+  if (atomic_load_explicit(match, memory_order_relaxed) > 0) return;
+  
   thread byte password[MAX_PASSWORD_LENGTH];
-  uint passwordSize;
+  thread uint passwordSize;
   
   passwordFrom(*input + threadID, password, &passwordSize);
-  MD5 md5(password, passwordSize);
+  thread MD5 md5(password, passwordSize);
+
+  thread bool nonMatching = (hash->x ^ md5.output.x) | (hash->y ^ md5.output.y) | (hash->z ^ md5.output.z) | (hash->w ^ md5.output.w);
   
-  for (uint i = 0; i < HASH_SIZE; i++) {
-    if (hash[i] != md5.output[i]) return;
+  thread uint mask = 0;
+  thread size_t uintSizeInBits = sizeof(uint) * BYTE_SIZE_IN_BITS;
+  for (thread uint i = 0; i < uintSizeInBits; i++) {
+    mask |= nonMatching << i;
   }
-  *match = threadID + 1;
+  mask = ~mask;
+  
+  thread uint store = mask & (threadID + 1);
+  thread uint zero = 0;
+  atomic_compare_exchange_weak_explicit(match, &zero, store, memory_order_relaxed, memory_order_relaxed);
 }
 
 kernel void hashify(constant byte const  * input      [[buffer(HashifyParameterInput)]],
                     constant uint const  * inputSize  [[buffer(HashifyParameterInputSize)]],
                     device   byte        * output     [[buffer(HashifyParameterOutput)]]) {
   thread byte password[MAX_PASSWORD_LENGTH];
-  uint passwordSize = *inputSize;
+  thread uint passwordSize = *inputSize;
   for (uint i = 0; i < *inputSize; i++) {
     password[i] = input[i];
   }
   MD5 md5(password, passwordSize);
+
+  thread uint intermediateOutput[4] = { md5.output.x, md5.output.y, md5.output.z, md5.output.w };
+  thread byte localOutput[HASH_SIZE];
+  encode(intermediateOutput, localOutput, 4);
   
   for (uint i = 0; i < HASH_SIZE; i++) {
-    output[i] = md5.output[i];    
+    output[i] = localOutput[i];
   }
 }

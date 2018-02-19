@@ -110,8 +110,10 @@ MD5::Puzzle MD5::puzzle(Round const round) {
 }
 
 void MD5::result() {
-  word pack[4] = { A, B, C, D };
-  encode(pack, output, 4);
+  output.x = A;
+  output.y = B;
+  output.z = C;
+  output.w = D;
 }
 
 word MD5::F(word X, word Y, word Z) {
