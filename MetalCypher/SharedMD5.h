@@ -17,9 +17,16 @@ using namespace metal;
 
 /// Definitions
 #pragma mark - Definitions
-#ifndef METAL
+#ifdef METAL
+
+#define uint64 size_t
+
+#else
+
+#define uint    unsigned int
+#define uint64  unsigned long long
 #define thread
-#define uint unsigned int
+
 #endif
 
 #define MAX_PASSWORD_LENGTH 4
