@@ -17,12 +17,19 @@ using namespace metal;
 
 /// Definitions
 #pragma mark - Definitions
-#ifndef METAL
+#ifdef METAL
+
+#define uint64 size_t
+
+#else
+
+#define uint    unsigned int
+#define uint64  unsigned long long
 #define thread
-#define uint unsigned int
+
 #endif
 
-#define MAX_PASSWORD_LENGTH 3
+#define MAX_PASSWORD_LENGTH 4
 #define BYTE_SIZE_IN_BITS   8
 #define HASH_SIZE           16
 #define BIGGEST_ASCII_DIGIT 0xff
@@ -46,7 +53,7 @@ typedef enum {
 
 /// Method declarations
 #pragma mark - Method declarations
-void passwordFrom(uint index, thread byte * output, thread uint * outputSize);
+void passwordFrom(uint64 index, thread byte * output, thread uint * outputSize);
 void encode(thread word const * const input, thread byte* output, uint inputSize);
 void decode(thread byte const * const input, thread word* output, uint inputSize);
 

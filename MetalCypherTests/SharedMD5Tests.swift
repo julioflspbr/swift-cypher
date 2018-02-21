@@ -12,7 +12,7 @@ class SharedMD5Tests: XCTestCase {
     let passwordToMatch = "la"
     let bytesToMatch = passwordToMatch.utf8.map({ $0 as UInt8 })
     
-    let index: UInt32 = 24940 // this number is equivalent to "la" when i.e. chars "\0" = 0, chars "\0\0" = 256, and so on
+    let index: UInt64 = 24940 // this index is equivalent to "la" (ASCII indices "\0" = 0, "\1" = 1, ... "a" = 97, "b" = 98, ... "aa" = 24673, ... "la" = 24940)
     var passwordLength: UInt32 = 0
     let outputPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: 10)
     
