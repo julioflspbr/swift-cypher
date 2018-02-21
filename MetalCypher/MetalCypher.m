@@ -13,7 +13,7 @@
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 
-#define MAX_TRIALS  (256 << (8 * (MAX_PASSWORD_LENGTH - 1)))
+#define MAX_TRIALS  (uint64)pow(256, MAX_PASSWORD_LENGTH)
 #define BATCH_SIZE  (1 << 20) /* one mega trials */
 
 #define kernelBruteForce  @"bruteForce"
@@ -42,7 +42,7 @@
   id<MTLBuffer> inputSizeBuffer;
   id<MTLBuffer> matchBuffer;
   id<MTLBuffer> outputBuffer;
-  uint trials;
+  uint64 trials;
 }
 
 @synthesize password;
@@ -61,7 +61,7 @@
   defaultLibrary  = [device newDefaultLibraryWithBundle:[self defaultBundle] error:nil];
   commandQueue    = [device newCommandQueue];
   hashBuffer      = [device newBufferWithLength:sizeof(simd_uint4)  options:MTLResourceOptionCPUCacheModeWriteCombined];
-  inputBuffer     = [device newBufferWithLength:sizeof(uint)        options:MTLResourceOptionCPUCacheModeWriteCombined];
+  inputBuffer     = [device newBufferWithLength:sizeof(simd_uint2)  options:MTLResourceOptionCPUCacheModeWriteCombined];
   matchBuffer     = [device newBufferWithLength:sizeof(uint)        options:MTLResourceStorageModeShared];
   
   pipeline = [device newComputePipelineStateWithFunction:[defaultLibrary newFunctionWithName:kernelBruteForce] error:nil];
@@ -130,10 +130,11 @@
   MTLSize grid;
   NSUInteger currentTrials = MIN((MAX_TRIALS - trials), BATCH_SIZE);
   
-  uint * input = [inputBuffer contents];
-  uint * match = [matchBuffer contents];
+  simd_uint2  * input = [inputBuffer contents];
+  uint        * match = [matchBuffer contents];
   
-  *input = trials;
+  input->x = (uint)trials;
+  input->y = (uint)(trials >> sizeof(word) * BYTE_SIZE_IN_BITS);
   
   threadsPerThreadgroup = MTLSizeMake([pipeline maxTotalThreadsPerThreadgroup], 1, 1);
   grid = MTLSizeMake(currentTrials, 1, 1);
