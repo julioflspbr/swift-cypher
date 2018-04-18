@@ -43,12 +43,24 @@ func hashify() {
 
 func reveal() {
   do {
+    let start = Date()
+    let dateFormatter = DateFormatter()
     let hash = CommandLine.arguments[CommandLineArguments.argument.rawValue]
     let revealer = try Revealer(hash: hash)
+    
+    dateFormatter.dateFormat = "HH:mm:ss.SSS"
+    
+    print("Starting to look for password at \(dateFormatter.string(from: start))")
     print("And the password is 🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁")
     revealer.reveal(
       result: { password in
         print(password)
+        
+        let end = Date()
+        let duration = end - start.timeIntervalSinceReferenceDate
+        print("Found password at \(dateFormatter.string(from: end))")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        print("The search time was \(dateFormatter.string(from: duration))")
       },
       error: { error in
         switch error {
