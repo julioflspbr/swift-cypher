@@ -11,6 +11,12 @@ class MetalCypherTests: XCTestCase {
   private enum Error: Swift.Error {
     case isNotEven, isNotHexadecimal
   }
+
+	private static let testBundle: Bundle = {
+		let bundle = Bundle(for: MetalCypher.self)
+		let metalBundleURL = bundle.bundleURL.deletingLastPathComponent()
+		return Bundle(url: metalBundleURL)!
+	}()
   
   func testHashifyPassword() {
     let passwordToMatch = "lalalones"
@@ -20,7 +26,7 @@ class MetalCypherTests: XCTestCase {
       XCTFail("The password is generating no bytes")
       return
     }
-    let hashifier = MetalCypher(password: passwordData)
+		let hashifier = MetalCypher(password: passwordData, in: MetalCypherTests.testBundle)
     let expectPasswordToMatch = expectation(description: "Matching password")
     let expectHashToMatch = expectation(description: "Matching hash")
     
@@ -48,7 +54,7 @@ class MetalCypherTests: XCTestCase {
       XCTFail("The hash characters count isn't even or is not hexadecimal.")
       return
     }
-    let hashifier = MetalCypher(hash: hashData)
+    let hashifier = MetalCypher(hash: hashData, in: MetalCypherTests.testBundle)
     let expectPasswordToMatch = expectation(description: "Matching password")
     let expectHashToMatch = expectation(description: "Matching hash")
     

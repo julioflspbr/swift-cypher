@@ -10,13 +10,18 @@ import XCTest
 class HashifierTests: XCTestCase {
   private static let password = "lalalones"
   private static let hashToMatch = "2a02361bcbf503bcab5f2ca312cca383"
+	private static let testBundle: Bundle = {
+		let bundle = Bundle(for: MetalCypher.self)
+		let metalBundleURL = bundle.bundleURL.deletingLastPathComponent()
+		return Bundle(url: metalBundleURL)!
+	}()
   
   func testHashifierDirectly() {
-    let hashifier = Hashifier(password: HashifierTests.password)
+		let hashifier = Hashifier(password: HashifierTests.password)
     let hashifyExpectation = expectation(description: "Hashify")
     
     do {
-      try hashifier.hashify { [weak self] data in
+			try hashifier.hashify (bundle: HashifierTests.testBundle) { [weak self] data in
         guard let `self` = self else { return }
         let generatedHash = self.convertToString(theHashData: data)
         
@@ -37,7 +42,7 @@ class HashifierTests: XCTestCase {
   func testHashifierViaCommandLinePerformance() {
     self.measure {
       CommandLine.arguments[CommandLineArguments.argument.rawValue] = HashifierTests.password
-      hashify()
+			hashify(bundle: HashifierTests.testBundle)
     }
   }
   

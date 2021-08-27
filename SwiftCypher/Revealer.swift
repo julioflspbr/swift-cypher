@@ -46,9 +46,9 @@ struct Revealer {
     self.hash = tempHash
   }
   
-  func reveal(result: @escaping (String) -> Void, error: @escaping (Revealer.Error.Password) -> Void) {
+	func reveal(bundle: Bundle? = nil, result: @escaping (String) -> Void, error: @escaping (Revealer.Error.Password) -> Void) {
     let semaphore = DispatchSemaphore(value: 0)
-    let cypher = MetalCypher(hash: Data(bytes: self.hash))
+		let cypher = MetalCypher(hash: Data(bytes: self.hash), in: bundle)
     
     cypher.password.result = { output in
       guard let password = String(data: output as Data, encoding: .ascii) else {

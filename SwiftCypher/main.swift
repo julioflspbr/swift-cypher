@@ -20,18 +20,18 @@ func printUsage() {
   print(usage)
 }
 
-func hashify() {
+func hashify(bundle: Bundle? = nil) {
   do {
     let password = CommandLine.arguments[CommandLineArguments.argument.rawValue]
-    let hashifier = Hashifier(password: password)
-    try hashifier.hashify(result: { hashData in
+		let hashifier = Hashifier(password: password)
+		try hashifier.hashify(bundle: bundle) { hashData in
       let hashPointer = hashData.bytes.assumingMemoryBound(to: UInt8.self)
       let hashBuffer = UnsafeBufferPointer(start: hashPointer, count: 16)
       let hashBytes = Array(hashBuffer)
       let hash = hashBytes.reduce("", { $0.appendingFormat("%02x", $1) })
       
       print("That's the hash you're looking for: \(hash)")
-    })
+    }
   } catch Hashifier.Error.isNotASCII {
     print("All password characters must be ASCII.")
     exit(EXIT_FAILURE)
@@ -41,7 +41,7 @@ func hashify() {
   }
 }
 
-func reveal() {
+func reveal(bundle: Bundle? = nil) {
   do {
     let start = Date()
     let dateFormatter = DateFormatter()
@@ -53,6 +53,7 @@ func reveal() {
     print("Starting to look for password at \(dateFormatter.string(from: start))")
     print("And the password is 🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁")
     revealer.reveal(
+			bundle: bundle,
       result: { password in
         print(password)
         

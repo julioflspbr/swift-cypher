@@ -17,13 +17,13 @@ struct Hashifier {
     self.password = password
   }
   
-  func hashify(result: @escaping (NSData) -> Void) throws {
+	func hashify(bundle: Bundle? = nil, result: @escaping (NSData) -> Void) throws {
     guard let passwordData = self.password.data(using: .ascii) else {
       throw Error.isNotASCII
     }
     
     let semaphore = DispatchSemaphore(value: 0)
-    let cypher = MetalCypher(password: passwordData)
+    let cypher = MetalCypher(password: passwordData, in: bundle)
     
     cypher.hash.result = { output in
       result(output)

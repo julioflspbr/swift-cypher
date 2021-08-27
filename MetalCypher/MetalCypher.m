@@ -52,13 +52,15 @@
   return [NSBundle bundleWithPath:[[NSProcessInfo processInfo] environment][@"PWD"]];
 }
 
-- (instancetype)initWithHash:(NSData *)theHash {
+- (instancetype)initWithHash:(NSData *)theHash inBundle:(NSBundle *)customBundle {
   if (!self) {
     return nil;
   }
+
+	NSBundle * bundle = customBundle ? customBundle : [self defaultBundle];
   
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibraryWithBundle:[self defaultBundle] error:nil];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:bundle error:nil];
   commandQueue    = [device newCommandQueue];
   hashBuffer      = [device newBufferWithLength:sizeof(simd_uint4)  options:MTLResourceOptionCPUCacheModeWriteCombined];
   inputBuffer     = [device newBufferWithLength:sizeof(simd_uint2)  options:MTLResourceOptionCPUCacheModeWriteCombined];
@@ -86,13 +88,15 @@
   return self;
 }
 
-- (instancetype)initWithPassword:(NSData *)thePassword {
+- (instancetype)initWithPassword:(NSData *)thePassword inBundle:(NSBundle *)customBundle {
   if (!self) {
     return nil;
   }
+
+	NSBundle * bundle = customBundle ? customBundle : [self defaultBundle];
   
   device          = MTLCreateSystemDefaultDevice();
-  defaultLibrary  = [device newDefaultLibraryWithBundle:[self defaultBundle] error:nil];
+  defaultLibrary  = [device newDefaultLibraryWithBundle:bundle error:nil];
   commandQueue    = [device newCommandQueue];
   inputBuffer     = [device newBufferWithLength:[thePassword length]  options:MTLResourceOptionCPUCacheModeWriteCombined];
   inputSizeBuffer = [device newBufferWithLength:sizeof(uint)          options:MTLResourceOptionCPUCacheModeWriteCombined];

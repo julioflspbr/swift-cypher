@@ -16,11 +16,11 @@
 		2224901B1FF5ADA500AC1E3C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C023C11F914D45002DDAC7 /* main.swift */; };
 		2224901D1FF5AE4D00AC1E3C /* RevealerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224901C1FF5AE4D00AC1E3C /* RevealerTests.swift */; };
 		22C023C21F914D45002DDAC7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C023C11F914D45002DDAC7 /* main.swift */; };
-		22C023C91F914D6F002DDAC7 /* libMetalCypher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CA1F914D6F002DDAC7 /* libMetalCypher.a */; };
 		22C023CD1F914D78002DDAC7 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CB1F914D78002DDAC7 /* MetalKit.framework */; };
 		22C023CE1F914D78002DDAC7 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C023CC1F914D78002DDAC7 /* Metal.framework */; };
 		22F39FA41FD6BDFD007CFF1F /* Revealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F39FA31FD6BDFD007CFF1F /* Revealer.swift */; };
 		22F39FA61FD6C49F007CFF1F /* Hashifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F39FA51FD6C49F007CFF1F /* Hashifier.swift */; };
+		7083AC2926D2A07A00A214FE /* libMetalCypher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7083AC2826D2A07A00A214FE /* libMetalCypher.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +36,7 @@
 		22C023CF1F9151BC002DDAC7 /* SwiftCypher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCypher-Bridging-Header.h"; sourceTree = "<group>"; };
 		22F39FA31FD6BDFD007CFF1F /* Revealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Revealer.swift; sourceTree = "<group>"; };
 		22F39FA51FD6C49F007CFF1F /* Hashifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashifier.swift; sourceTree = "<group>"; };
+		7083AC2826D2A07A00A214FE /* libMetalCypher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMetalCypher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7083AC2926D2A07A00A214FE /* libMetalCypher.a in Frameworks */,
 				22C023CD1F914D78002DDAC7 /* MetalKit.framework in Frameworks */,
 				22C023CE1F914D78002DDAC7 /* Metal.framework in Frameworks */,
-				22C023C91F914D6F002DDAC7 /* libMetalCypher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +106,7 @@
 		22C023C81F914D6F002DDAC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7083AC2826D2A07A00A214FE /* libMetalCypher.a */,
 				22C023CC1F914D78002DDAC7 /* Metal.framework */,
 				22C023CB1F914D78002DDAC7 /* MetalKit.framework */,
 				22C023CA1F914D6F002DDAC7 /* libMetalCypher.a */,
@@ -136,8 +138,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22C023C51F914D45002DDAC7 /* Build configuration list for PBXNativeTarget "SwiftCypher" */;
 			buildPhases = (
-				22C023BA1F914D45002DDAC7 /* Sources */,
 				22C023BB1F914D45002DDAC7 /* Frameworks */,
+				22C023BA1F914D45002DDAC7 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -230,10 +232,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5HMJW6N276;
+				DEVELOPMENT_TEAM = E6YTGU5HSG;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				INFOPLIST_FILE = SwiftCypherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypherTests;
@@ -250,10 +253,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5HMJW6N276;
+				DEVELOPMENT_TEAM = E6YTGU5HSG;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				INFOPLIST_FILE = SwiftCypherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,7 +311,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -355,7 +358,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -366,9 +368,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HMJW6N276;
+				DEVELOPMENT_TEAM = E6YTGU5HSG;
+				EXCLUDED_ARCHS = arm64;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HMJW6N276;
+				DEVELOPMENT_TEAM = E6YTGU5HSG;
+				EXCLUDED_ARCHS = arm64;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = flores.julio.SwiftCypher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
